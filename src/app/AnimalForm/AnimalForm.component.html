@@ -1,0 +1,25 @@
+<main>
+    <form class="Animals-form" [formGroup]="AnimalForm" (ngSubmit)="onSubmit()">
+        <div class="Animals-input">
+            <input type="text" class="inputLol" placeholder="Animal name" formControlName="name">
+        </div>
+        <div class="Animals-input">
+            <input type="text" class="inputLol" placeholder="Animal description" formControlName="description">
+        </div>
+        <div class="Animals-input">
+            <input type="text" class="inputLol" placeholder="Animal age" formControlName="age">
+        </div>
+        <div class="Animals-input">
+            <input type="text" class="inputLol" placeholder="Animal race" formControlName="race">
+        </div>
+        <div class="Animals-input">
+            <input type="text" class="inputLol" placeholder="Animal Img" formControlName="img">
+        </div>
+        <div class="buttons">
+            <button type="submit">
+              Submit
+            </button>
+        </div>
+    </form>
+
+</main>

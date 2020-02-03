@@ -1,5 +1,5 @@
 <main>
-    <div *ngFor="let animal of animals" class="cart">
+    <div *ngFor="let animal of animalsService.Animals" class="cart">
         <div class="cart-img">
             <img [src]="animal.img" [alt]="animal.name">
         </div>
@@ -8,16 +8,24 @@
             <div class="cart-body-header">
                 <div class="cart-body-header-1">
                     <h3>Animal Age</h3>
-                    <h3>Animal raze</h3>
+                    <h3>Animal race</h3>
                 </div>
                 <div class="cart-body-header-2">
                     <h3>{{animal.age}}</h3>
-                    <h3>{{animal.raze}}</h3>
+                    <h3>{{animal.race}}</h3>
                 </div>
             </div>
             <div class="cart-description">
                 Animal-description: {{animal.description}}
             </div>
+        </div>
+        <div class="buttons">
+            <button class="editar" (click)="editAnimal(animal)">
+                Editar
+            </button>
+            <button class=" borrar" (click)="deleteAnimal(animal)">
+                Borrar
+            </button>
         </div>
     </div>
 </main>
