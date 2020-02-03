@@ -1,20 +1,28 @@
 <main>
     <form class="Animals-form" [formGroup]="AnimalForm" (ngSubmit)="onSubmit()">
-        <div class="Animals-input">
-            <input type="text" class="inputLol" placeholder="Animal name" formControlName="name">
-        </div>
-        <div class="Animals-input">
-            <input type="text" class="inputLol" placeholder="Animal description" formControlName="description">
-        </div>
-        <div class="Animals-input">
-            <input type="text" class="inputLol" placeholder="Animal age" formControlName="age">
-        </div>
-        <div class="Animals-input">
-            <input type="text" class="inputLol" placeholder="Animal race" formControlName="race">
-        </div>
-        <div class="Animals-input">
-            <input type="text" class="inputLol" placeholder="Animal Img" formControlName="img">
-        </div>
+        <fieldset class="main-form">
+            <legend>Animal:</legend>
+            <div class="Animals-input">
+                <label>Name:</label>
+                <input type="text" class="inputLol" placeholder="Animal name" formControlName="name">
+            </div>
+            <div class="Animals-input">
+                <label>Description:</label>
+                <input type="text" class="inputLol" placeholder="Animal description" formControlName="description">
+            </div>
+            <div class="Animals-input">
+                <label>Age:</label>
+                <input type="text" class="inputLol" placeholder="Animal age" formControlName="age">
+            </div>
+            <div class="Animals-input">
+                <label>Price:</label>
+                <input type="text" class="inputLol" placeholder="Animal race" formControlName="race">
+            </div>
+            <div class="Animals-input">
+                <label>Img:</label>
+                <input type="text" class="inputLol" placeholder="Animal Img" formControlName="img">
+            </div>
+        </fieldset>
         <div class="buttons">
             <button type="submit">
               Submit
