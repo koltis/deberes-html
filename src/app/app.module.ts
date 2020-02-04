@@ -9,6 +9,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AnimalListComponent } from './animalList/animalList.component';
 import { CrudCutreService } from './crud-cutre.service';
 import { AnimalFormComponent } from './AnimalForm/AnimalForm.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -26,7 +27,11 @@ import { AnimalFormComponent } from './AnimalForm/AnimalForm.component';
       FormsModule
    ],
    providers: [
-      CrudCutreService
+      CrudCutreService,
+      {
+         provide: LocationStrategy,
+         useClass: HashLocationStrategy
+      }
    ],
    bootstrap: [
       AppComponent

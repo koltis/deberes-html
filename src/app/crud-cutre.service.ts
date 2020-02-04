@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Animal } from './Animal';
+import { AnimalStore } from './AnimalStore';
+import { of } from 'rxjs';
 
 @Injectable()
 export class CrudCutreService {
@@ -15,18 +17,17 @@ export class CrudCutreService {
         this.Animals = this.Animals.filter(Animal=>Animal!=animal)
     }
     putAnimal(id,value){
-        this.Animals = this.Animals.map((Animal,index)=>{
-           
+        this.Animals = this.Animals.map((Animal,index)=> {
             if(index==id){
                 return value
             }
             return Animal
-    })
+        })
     }
     getAnimals(){
-         this.http.get<Animal[]>('./assets/Animals.json').subscribe(
+        of(AnimalStore).subscribe(
             ress=>{this.Animals = ress},
             err=>{console.log(err)}
-         )
+        )
     }
 }
